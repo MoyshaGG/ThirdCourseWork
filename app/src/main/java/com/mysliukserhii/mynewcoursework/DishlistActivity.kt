@@ -8,16 +8,12 @@ import android.view.MenuItem
 import android.widget.ListAdapter
 import androidx.lifecycle.*
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.mysliukserhii.mynewcoursework.adapter.DishListAdapter
 import com.mysliukserhii.mynewcoursework.adapter.DishesListAdapter
-import com.mysliukserhii.mynewcoursework.adapter.OnItemClick
 import com.mysliukserhii.mynewcoursework.databinding.ActivityDishlistBinding
-import com.mysliukserhii.mynewcoursework.dishes.Dishes
-import com.mysliukserhii.mynewcoursework.viewModel.DishListViewModel
 import com.mysliukserhii.mynewcoursework.viewModel.SettingViewModel
 
 
-class DishlistActivity : AppCompatActivity(), OnItemClick {
+class DishlistActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDishlistBinding
     private lateinit var viewModel: SettingViewModel
 
@@ -36,7 +32,10 @@ class DishlistActivity : AppCompatActivity(), OnItemClick {
       //  recyclerView.layoutManager = LinearLayoutManager
         viewModel = ViewModelProvider(this).get(SettingViewModel::class.java)
         viewModel.readAllData.observe({ lifecycle }, { dishes ->
-            adapter.setData(dishes)
+            adapter.dishesList
+            val test = dishes
+
+          //  adapter.setData(dishes)
         })
     }
 
@@ -52,7 +51,4 @@ class DishlistActivity : AppCompatActivity(), OnItemClick {
         return super.onOptionsItemSelected(item)
     }
 
-    override fun onClick(dishId: Int) {
-        finish()
-    }
 }
