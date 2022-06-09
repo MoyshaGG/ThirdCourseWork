@@ -12,23 +12,23 @@
 
         android:theme="@style/Theme.MyNewCourseWork">
         <activity
-            android:name=".SettingsActivity"
+            android:name=".ui.add_dish.AddDish"
             android:exported="false"
             android:label="Створення страви"
 
             />
         <activity
-            android:name=".DishlistActivity"
+            android:name=".ui.dishes.Dishes"
             android:exported="false"
             android:label="Список страв"
             />
         <activity
-            android:name=".ConstructorActivity"
+            android:name=".ui.cobstructor.Constructor"
             android:exported="false"
 
             />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.user_data.UserData"
             android:exported="true"
             android:label="Дані користувача"
             >
