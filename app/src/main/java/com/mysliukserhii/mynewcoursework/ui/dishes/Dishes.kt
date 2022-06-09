@@ -1,11 +1,17 @@
 package com.mysliukserhii.mynewcoursework.ui.dishes
 
+import android.os.Bundle
+import android.view.MenuItem
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.mysliukserhii.mynewcoursework.R
 import com.mysliukserhii.mynewcoursework.databinding.ActivityDishlistBinding
 
-class Dishes: AppCompatActivity(), OnItemClick {
+class Dishes : AppCompatActivity() {
     private lateinit var binding: ActivityDishlistBinding
-    private lateinit var viewModel: SettingViewModel
+    private val viewModel: DishesViewModel by viewModels()
+    private lateinit var dishesAdaptor: DishesListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,29 +22,11 @@ class Dishes: AppCompatActivity(), OnItemClick {
         setContentView(view)
 
         val recyclerView = binding.dishListRecycleView
-        val adapter = DishesListAdapter()
-        recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        //  recyclerView.layoutManager = LinearLayoutManager
-        viewModel = ViewModelProvider(this).get(SettingViewModel::class.java)
-        viewModel.readAllData.observe({ lifecycle }, { dishes ->
-            adapter.setData(dishes)
-        })
-    }
-
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            android.R.id.home -> {
-                finish()
-                return true
-            }
-
+        recyclerView.apply {
+            layoutManager =
+                LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+            dishesAdaptor = DishesListAdapter()
+            adapter = dishesAdaptor
         }
-        return super.onOptionsItemSelected(item)
-    }
-
-    override fun onClick(dishId: Int) {
-        finish()
     }
 }
