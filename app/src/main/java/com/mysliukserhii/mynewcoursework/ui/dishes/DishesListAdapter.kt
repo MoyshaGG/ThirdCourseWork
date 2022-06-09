@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mysliukserhii.mynewcoursework.R
 
 class DishesListAdapter : RecyclerView.Adapter<DishesListAdapter.DishesListViewHolder>() {
-    private var dishesList = emptyList<Dishes>()
+    var dishesList = emptyList<com.mysliukserhii.mynewcoursework.data.dao.dishes.Dishes>()
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -28,16 +28,12 @@ class DishesListAdapter : RecyclerView.Adapter<DishesListAdapter.DishesListViewH
     inner class DishesListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         val dishname = itemView.findViewById<TextView>(R.id.dishname)
-        val kkal:TextView = itemView.findViewById(R.id.kkal)
+        val kkal: TextView = itemView.findViewById(R.id.kkal)
 
-        fun bind(data: Dishes) {
-
+        fun bind(data: com.mysliukserhii.mynewcoursework.data.dao.dishes.Dishes) {
+            dishname.text = data.name
+            kkal.text = data.cal
         }
 
-    }
-    fun setData(dishes: List<Dishes>)
-    {
-        this.dishesList = dishes
-        notifyDataSetChanged()
     }
 }

@@ -28,5 +28,9 @@ class Dishes : AppCompatActivity() {
             dishesAdaptor = DishesListAdapter()
             adapter = dishesAdaptor
         }
+
+        viewModel.contentListLiveData.observe(this) {
+            dishesAdaptor.dishesList = it
+        }
     }
 }
