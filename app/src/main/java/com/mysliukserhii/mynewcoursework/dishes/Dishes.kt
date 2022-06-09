@@ -11,6 +11,6 @@ data class Dishes(
     @ColumnInfo
     val name:String,
     @ColumnInfo
-    val cal:Int)
+    val cal:String)
 
 

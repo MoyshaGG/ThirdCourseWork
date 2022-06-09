@@ -27,15 +27,20 @@ class ConstructorActivity : AppCompatActivity(), View.OnClickListener {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.spinner.adapter = adapter
         binding.intentButton.setOnClickListener(this)
-        binding.breakfast.setOnClickListener{selectDish(1,1)}
-        binding.lunch.setOnClickListener{selectDish(2,2)}
-        binding.dinner.setOnClickListener{selectDish(3,4)}
+        binding.breakfast.setOnClickListener{
+            //selectDish(1,1)
+            selectDish()
+        }
+//        binding.lunch.setOnClickListener{selectDish(2,2)}
+//        binding.dinner.setOnClickListener{selectDish(3,4)}
 
     }
-    fun selectDish(time:Int,day:Int){
+    fun selectDish(
+       // time:Int,day:Int
+    ){
         val intent = Intent(this, DishlistActivity::class.java)
-        intent.putExtra("time",time)
-        intent.putExtra("day",day)
+//        intent.putExtra("time",time)
+//        intent.putExtra("day",day)
 
         startActivity(intent)
 

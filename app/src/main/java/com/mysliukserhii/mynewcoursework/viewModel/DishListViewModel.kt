@@ -13,10 +13,10 @@ import kotlinx.coroutines.launch
 
 
 class DishListViewModel (application: Application) : AndroidViewModel(application) {
-    private val dishesData: DishesData = DishesData()
-    private val _dishesLiveData = MutableLiveData<List<Dishes>>()
+     val dishesData: DishesData = DishesData()
+     val _dishesLiveData = MutableLiveData<List<Dishes>>()
     val dishesLiveData: LiveData<List<Dishes>> = _dishesLiveData
-    private val dishesDataBase = AppDatabase.getInstance(application).DishesDao()
+     val dishesDataBase = AppDatabase.getInstance(application).DishesDao()
     val dishes = dishesDataBase.getAllDishesLiveData()
 
 
@@ -36,7 +36,7 @@ class DishListViewModel (application: Application) : AndroidViewModel(applicatio
     private suspend fun insertDishesToDataBase() {
         if (dishesDataBase.count() == 0) {
             for (dishes in dishesData.dishList)
-                dishesDataBase.insert(dishes)
+                dishesDataBase.addDishes(dishes)
         }
     }
 }

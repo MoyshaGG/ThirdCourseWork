@@ -8,7 +8,7 @@ import com.mysliukserhii.mynewcoursework.user.User
 import kotlinx.coroutines.launch
 
 class MainActivityViewModel(application: Application) : AndroidViewModel(application) {
-    private val usersDataBase = AppDatabase.getInstance(application).UserDao()
+     val usersDataBase = AppDatabase.getInstance(application).UserDao()
 
     fun insertUser(user: User) {
         viewModelScope.launch {

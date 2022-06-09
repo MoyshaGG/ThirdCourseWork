@@ -18,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.477"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/WeightUser" />
+        app:layout_constraintTop_toBottomOf="@+id/nameDishText" />
 
     <EditText
         android:id="@+id/AgeUser"
@@ -45,7 +45,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <EditText
-        android:id="@+id/WeightUser"
+        android:id="@+id/nameDishText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="45dp"
@@ -95,9 +95,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="6dp"
         android:text="кг"
-        app:layout_constraintBottom_toBottomOf="@+id/WeightUser"
-        app:layout_constraintStart_toEndOf="@+id/WeightUser"
-        app:layout_constraintTop_toTopOf="@+id/WeightUser" />
+        app:layout_constraintBottom_toBottomOf="@+id/nameDishText"
+        app:layout_constraintStart_toEndOf="@+id/nameDishText"
+        app:layout_constraintTop_toTopOf="@+id/nameDishText" />
 
     <TextView
         android:id="@+id/textView3"

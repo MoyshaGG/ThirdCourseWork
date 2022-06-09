@@ -51,7 +51,7 @@ class DishListAdapter(private val onItemClick: OnItemClick) :
 
         fun bind(item: Dishes, context: Context) {
             dishnameTextView.text = item.name
-            kkalTextView.text = item.cal.toString()
+            kkalTextView.text = item.cal
             itemView.setOnClickListener {
                 onItemClick.onClick(item.dish_id)
             }

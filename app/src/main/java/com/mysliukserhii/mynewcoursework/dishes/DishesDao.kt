@@ -6,7 +6,10 @@ import com.mysliukserhii.mynewcoursework.foodConstructer.Constructor
 @Dao
 interface DishesDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(dishes: Dishes)
+    suspend fun addDishes(dishes: Dishes)
+
+    @Query("SELECT * FROM dishes ORDER BY dish_id ASC")
+    fun readAllData():LiveData<List<Dishes>>
 
     @Delete
     suspend fun delete(dishes: Dishes)
