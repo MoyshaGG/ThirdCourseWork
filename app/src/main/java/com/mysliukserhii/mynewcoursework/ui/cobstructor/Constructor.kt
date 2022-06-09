@@ -1,19 +1,13 @@
-package com.mysliukserhii.mynewcoursework
+package com.mysliukserhii.mynewcoursework.ui.cobstructor
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.MenuItem
 import android.view.View
 import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.Spinner
-import android.widget.TextView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import androidx.appcompat.app.AppCompatActivity
 import com.mysliukserhii.mynewcoursework.databinding.ActivityConstructorBinding
-import kotlinx.coroutines.selects.select
 
-class ConstructorActivity : AppCompatActivity(), View.OnClickListener {
+class Constructor: AppCompatActivity(), View.OnClickListener {
     val days = arrayOf("Понеділок", "Вівторок","Середа","Четверг","П'ятниця","Суббота")
     lateinit var binding:ActivityConstructorBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,7 +30,7 @@ class ConstructorActivity : AppCompatActivity(), View.OnClickListener {
 
     }
     fun selectDish(
-       // time:Int,day:Int
+        // time:Int,day:Int
     ){
         val intent = Intent(this, DishlistActivity::class.java)
 //        intent.putExtra("time",time)
@@ -62,5 +56,5 @@ class ConstructorActivity : AppCompatActivity(), View.OnClickListener {
         }
         startActivity(intent)
     }
+} {
 }
-

@@ -1,23 +1,9 @@
-package com.mysliukserhii.mynewcoursework
+package com.mysliukserhii.mynewcoursework.ui.dishes
 
-import android.content.Context
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.view.MenuItem
-import android.widget.ListAdapter
-import androidx.lifecycle.*
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.mysliukserhii.mynewcoursework.adapter.DishListAdapter
-import com.mysliukserhii.mynewcoursework.adapter.DishesListAdapter
-import com.mysliukserhii.mynewcoursework.adapter.OnItemClick
 import com.mysliukserhii.mynewcoursework.databinding.ActivityDishlistBinding
-import com.mysliukserhii.mynewcoursework.dishes.Dishes
-import com.mysliukserhii.mynewcoursework.viewModel.DishListViewModel
-import com.mysliukserhii.mynewcoursework.viewModel.SettingViewModel
 
-
-class DishlistActivity : AppCompatActivity(), OnItemClick {
+class Dishes: AppCompatActivity(), OnItemClick {
     private lateinit var binding: ActivityDishlistBinding
     private lateinit var viewModel: SettingViewModel
 
@@ -33,7 +19,7 @@ class DishlistActivity : AppCompatActivity(), OnItemClick {
         val adapter = DishesListAdapter()
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
-      //  recyclerView.layoutManager = LinearLayoutManager
+        //  recyclerView.layoutManager = LinearLayoutManager
         viewModel = ViewModelProvider(this).get(SettingViewModel::class.java)
         viewModel.readAllData.observe({ lifecycle }, { dishes ->
             adapter.setData(dishes)

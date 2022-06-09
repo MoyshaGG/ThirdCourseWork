@@ -1,14 +1,4 @@
-package com.mysliukserhii.mynewcoursework.adapter
-
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.EditText
-import android.widget.TextView
-import androidx.recyclerview.widget.ListAdapter
-import androidx.recyclerview.widget.RecyclerView
-import com.mysliukserhii.mynewcoursework.R
-import com.mysliukserhii.mynewcoursework.dishes.Dishes
+package com.mysliukserhii.mynewcoursework.ui.dishes
 
 class DishesListAdapter : RecyclerView.Adapter<DishesListAdapter.DishesListViewHolder>() {
     private var dishesList = emptyList<Dishes>()
@@ -34,7 +24,7 @@ class DishesListAdapter : RecyclerView.Adapter<DishesListAdapter.DishesListViewH
         val kkal:TextView = itemView.findViewById(R.id.kkal)
 
         fun bind(data: Dishes) {
-           dishname.text = currentItem.name
+            dishname.text = currentItem.name
             kkal.text = currentItem.cal
         }
 
