@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import com.mysliukserhii.mynewcoursework.databinding.ActivityConstructorBinding
 import com.mysliukserhii.mynewcoursework.ui.add_dish.AddDish
-import com.mysliukserhii.mynewcoursework.ui.dishes.Dishes
+import com.mysliukserhii.mynewcoursework.ui.dishes.DishListActivity
 
 class Constructor : AppCompatActivity(), View.OnClickListener {
     val days = arrayOf("Понеділок", "Вівторок", "Середа", "Четверг", "П'ятниця", "Суббота")
@@ -30,8 +30,10 @@ class Constructor : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun selectDish() {
-        val intent = Intent(this, Dishes::class.java)
+        val intent = Intent(this, DishListActivity::class.java)
         startActivity(intent)
+
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

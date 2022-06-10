@@ -18,13 +18,15 @@
 
             />
         <activity
-            android:name=".ui.dishes.Dishes"
+            android:name=".ui.dishes.DishListActivity"
             android:exported="false"
             android:label="Список страв"
             />
         <activity
             android:name=".ui.cobstructor.Constructor"
             android:exported="false"
+            android:label="Конструктор"
+
 
             />
         <activity
