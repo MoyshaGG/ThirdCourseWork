@@ -12,7 +12,7 @@
 
         android:theme="@style/Theme.MyNewCourseWork">
         <activity
-            android:name=".ui.add_dish.AddDish"
+            android:name=".ui.add_dish.AddDishActivity"
             android:exported="false"
             android:label="Створення страви"
 

@@ -1,6 +1,7 @@
 package com.mysliukserhii.mynewcoursework.ui.add_dish
 
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
@@ -13,8 +14,9 @@ import com.mysliukserhii.mynewcoursework.R
 import com.mysliukserhii.mynewcoursework.data.dao.dishes.Dishes
 
 import androidx.activity.viewModels
+import com.mysliukserhii.mynewcoursework.ui.dishes.DishListActivity
 
-class AddDish : AppCompatActivity() {
+class AddDishActivity : AppCompatActivity() {
     val days = arrayOf("Понеділок", "Вівторок", "Середа", "Четверг","П'ятниця", "Суббота","Неділя")
     val time = arrayOf("Сніданок", "Обід", "Вечеря")
 
@@ -44,10 +46,14 @@ class AddDish : AppCompatActivity() {
         val dishNameText: EditText = findViewById(R.id.nameDishText)
         val calDish = calDishText.text.toString()
         val dishName = dishNameText.text.toString()
-        if(inputCheck(calDish,dishName))
+
+        if(inputCheck(calDish,dishName) && calDish!="" && dishName != "")
         {
             addDishViewModel.addDishes(Dishes(0, dishName,calDish))
             Toast.makeText(this,"Dishes has been added", Toast.LENGTH_LONG).show()
+            val intent = Intent(this, DishListActivity::class.java)
+            startActivity(intent)
+
         }
         else{
             Toast.makeText(this,"Bastard, fill out all fields!", Toast.LENGTH_LONG).show()

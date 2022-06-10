@@ -7,7 +7,7 @@ import android.view.View
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import com.mysliukserhii.mynewcoursework.databinding.ActivityConstructorBinding
-import com.mysliukserhii.mynewcoursework.ui.add_dish.AddDish
+import com.mysliukserhii.mynewcoursework.ui.add_dish.AddDishActivity
 import com.mysliukserhii.mynewcoursework.ui.dishes.DishListActivity
 
 class Constructor : AppCompatActivity(), View.OnClickListener {
@@ -25,6 +25,16 @@ class Constructor : AppCompatActivity(), View.OnClickListener {
         binding.spinner.adapter = adapter
         binding.intentButton.setOnClickListener(this)
         binding.breakfast.setOnClickListener {
+
+            selectDish()
+        }
+        binding.lunch.setOnClickListener {
+            selectDish()
+        }
+        binding.breakfast.setOnClickListener {
+            selectDish()
+        }
+        binding.dinner.setOnClickListener {
             selectDish()
         }
     }
@@ -48,7 +58,7 @@ class Constructor : AppCompatActivity(), View.OnClickListener {
 
 
     override fun onClick(v: View?) {
-        val intent = Intent(this, AddDish::class.java)
+        val intent = Intent(this, AddDishActivity::class.java)
         startActivity(intent)
     }
 }
