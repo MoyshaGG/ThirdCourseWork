@@ -4,36 +4,31 @@
 
     <application
         android:name=".App"
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="Конструктор Харчування"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-
         android:theme="@style/Theme.MyNewCourseWork">
+        <activity
+            android:name=".ui.update_dishes.UpdateDish"
+            android:exported="false" />
         <activity
             android:name=".ui.add_dish.AddDishActivity"
             android:exported="false"
-            android:label="Створення страви"
-
-            />
+            android:label="Створення страви" />
         <activity
             android:name=".ui.dishes.DishListActivity"
             android:exported="false"
-            android:label="Список страв"
-            />
+            android:label="Список страв" />
         <activity
-            android:name=".ui.cobstructor.Constructor"
+            android:name=".ui.constructor.ConstructorActivity"
             android:exported="false"
-            android:label="Конструктор"
-
-
-            />
+            android:label="Конструктор" />
         <activity
             android:name=".ui.user_data.UserData"
             android:exported="true"
-            android:label="Дані користувача"
-            >
+            android:label="Дані користувача">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

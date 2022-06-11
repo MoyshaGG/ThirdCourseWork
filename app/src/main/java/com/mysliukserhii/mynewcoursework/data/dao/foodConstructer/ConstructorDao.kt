@@ -1,6 +1,7 @@
 package com.mysliukserhii.mynewcoursework.data.dao.foodConstructer
 
 import androidx.room.*
+import com.mysliukserhii.mynewcoursework.data.dao.dishes.Dishes
 
 @Dao
 interface ConstructorDao {
@@ -24,13 +25,16 @@ interface ConstructorDao {
     @Query("SELECT * FROM diets WHERE diet_id = :diet_id")
     fun getDietWithDishes(diet_id: Int): List<DietWithDishes>
 
-//    @Query("SELECT  dish_id, dishes.name, dishes.cal FROM dishes LEFT JOIN  constructor_food ON constructor_food.dish_id =  dishes.dish_id AND diet_id = :dietKey AND day = :day and time = :time")
-//        fun getUserWithApps(dietKey: Int, day: Int, time: Int): Dishes
+//   @Query("SELECT  dish_id, dishes.name, dishes.cal FROM dishes LEFT JOIN " +
+//           " constructor_food ON constructor_food.dish_id =  dishes.dish_id " +
+//           "AND diet_id = :dietKey AND day = :day and time = :time")
 
+    @Query("SELECT  dishes.dish_id, dishes.name, dishes.cal FROM constructor_food LEFT JOIN dishes ON constructor_food.dish_id =  dishes.dish_id \n" +
+            "WHERE day = :day and time = :time")
+       fun getUserWithApps( day: String, time: Int): Dishes
 
 //    @Query("SELECT * " +
 //            "FROM  " + "LEFT JOIN  " + "  ON  =  AND  = :accountId")
-//
 //    fun getBoxesAndSettings(accountId: Long): Flow<Map<BoxDbEntity, AccountBoxSettingDbEntity?>>
 //
 

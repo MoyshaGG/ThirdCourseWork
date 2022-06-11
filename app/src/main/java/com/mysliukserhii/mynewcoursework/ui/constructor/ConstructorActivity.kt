@@ -1,20 +1,17 @@
-package com.mysliukserhii.mynewcoursework.ui.cobstructor
+package com.mysliukserhii.mynewcoursework.ui.constructor
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
 import android.view.View
-import android.widget.AdapterView
-import android.widget.AdapterView.OnItemSelectedListener
 import android.widget.ArrayAdapter
-import android.widget.Spinner
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.mysliukserhii.mynewcoursework.data.dao.dishes.DishesData
 import com.mysliukserhii.mynewcoursework.databinding.ActivityConstructorBinding
 import com.mysliukserhii.mynewcoursework.ui.add_dish.AddDishActivity
 import com.mysliukserhii.mynewcoursework.ui.dishes.DishListActivity
-import com.mysliukserhii.mynewcoursework.ui.dishes.DishesData
 
 class ConstructorActivity : AppCompatActivity(), View.OnClickListener {
     private val viewModel: ConstrutorViewModel by viewModels()

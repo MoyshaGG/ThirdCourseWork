@@ -27,7 +27,8 @@ class AddDishActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        val add_button: Button = findViewById(R.id.add_button)
+        val add_button: Button = findViewById(R.id.changeAddButton)
+        val list_button: Button = findViewById(R.id.list_button)
 
         val adapterDay: ArrayAdapter<String> =
             ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,days)
@@ -39,11 +40,16 @@ class AddDishActivity : AppCompatActivity() {
         add_button.setOnClickListener{
             insertDataToDatabase()
         }
+        list_button.setOnClickListener{
+            val intent = Intent(this, DishListActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
     private fun insertDataToDatabase(){
-        val calDishText: EditText = findViewById(R.id.calDishText)
-        val dishNameText: EditText = findViewById(R.id.nameDishText)
+        val calDishText: EditText = findViewById(R.id.changeCalDishText)
+        val dishNameText: EditText = findViewById(R.id.changeNameDishText)
         val calDish = calDishText.text.toString()
         val dishName = dishNameText.text.toString()
 
@@ -74,4 +80,6 @@ class AddDishActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+
+
 }

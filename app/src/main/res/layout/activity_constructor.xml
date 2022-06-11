@@ -4,20 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.cobstructor.Constructor">
+    tools:context=".ui.constructor.ConstructorActivity">
 
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="218dp"
         android:layout_height="34dp"
-        android:padding="4dp"
-
         android:layout_weight="40"
+        android:padding="4dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/fragmentContainerView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.186"
         tools:listitem="text" />
 
     <androidx.fragment.app.FragmentContainerView

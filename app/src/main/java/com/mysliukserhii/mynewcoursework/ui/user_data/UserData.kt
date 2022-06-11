@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import com.mysliukserhii.mynewcoursework.R
 import com.mysliukserhii.mynewcoursework.databinding.ActivityMainBinding
-import com.mysliukserhii.mynewcoursework.ui.cobstructor.Constructor
+import com.mysliukserhii.mynewcoursework.ui.constructor.ConstructorActivity
 
 
 class UserData : AppCompatActivity(), View.OnClickListener {
@@ -44,7 +44,7 @@ class UserData : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        val intent = Intent(this, Constructor::class.java).apply {
+        val intent = Intent(this, ConstructorActivity::class.java).apply {
         }
         startActivity(intent)
 

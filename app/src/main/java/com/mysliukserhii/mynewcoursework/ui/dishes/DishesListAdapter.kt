@@ -1,5 +1,6 @@
 package com.mysliukserhii.mynewcoursework.ui.dishes
 
+import android.text.Layout
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,7 @@ import com.mysliukserhii.mynewcoursework.data.dao.dishes.Dishes
 
 class DishesListAdapter : RecyclerView.Adapter<DishesListAdapter.DishesListViewHolder>() {
     var dishesList = emptyList<Dishes>()
+
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -22,6 +24,7 @@ class DishesListAdapter : RecyclerView.Adapter<DishesListAdapter.DishesListViewH
 
     override fun onBindViewHolder(holder: DishesListAdapter.DishesListViewHolder, position: Int) {
         holder.bind(dishesList[position])
+
     }
 
     override fun getItemCount() = dishesList.size
@@ -30,9 +33,15 @@ class DishesListAdapter : RecyclerView.Adapter<DishesListAdapter.DishesListViewH
 
         val dishname: TextView = itemView.findViewById(R.id.dishname)
         val kkal: TextView = itemView.findViewById(R.id.kkal)
+        val itemdish = R.layout.item_dish
+
         fun bind(data: Dishes) {
+
             dishname.text = data.name
             kkal.text = data.cal
+            itemView.setOnClickListener{
+                //val action =
+            }
         }
 
     }

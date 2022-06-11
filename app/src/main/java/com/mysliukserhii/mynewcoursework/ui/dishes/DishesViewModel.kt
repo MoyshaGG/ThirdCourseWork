@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mysliukserhii.mynewcoursework.data.dao.dishes.Dishes
 import com.mysliukserhii.mynewcoursework.data.dao.dishes.DishesRepository
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class DishesViewModel : ViewModel() {
@@ -24,6 +25,12 @@ class DishesViewModel : ViewModel() {
     private suspend fun getDishes() {
         repo.getAllDishes {
             _contentListLiveData.value = it
+        }
+    }
+    fun addDishes(dishes: Dishes)
+    {
+        viewModelScope.launch(Dispatchers.IO) {
+            repo.addDishes(dishes)
         }
     }
 }

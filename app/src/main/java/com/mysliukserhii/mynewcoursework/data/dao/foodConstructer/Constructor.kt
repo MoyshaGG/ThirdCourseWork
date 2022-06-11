@@ -27,7 +27,7 @@ import com.mysliukserhii.mynewcoursework.data.dao.dishes.Dishes
             childColumns = ["dish_id"],
             onDelete = ForeignKey.CASCADE,
             onUpdate = ForeignKey.CASCADE
-            )
+        )
     ]
 )
 
@@ -38,7 +38,7 @@ data class Constructor(
     @ColumnInfo(name = "dish_id")
     val dish_id: Int,
     @ColumnInfo
-    val day: Int,
+    val day: String,
     @ColumnInfo
     val time: Int,
 

@@ -1,4 +1,4 @@
-package com.mysliukserhii.mynewcoursework.ui.cobstructor
+package com.mysliukserhii.mynewcoursework.ui.constructor
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

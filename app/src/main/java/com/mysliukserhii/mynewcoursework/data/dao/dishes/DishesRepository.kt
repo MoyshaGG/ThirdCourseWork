@@ -5,7 +5,7 @@ import com.mysliukserhii.mynewcoursework.data.AppDataBase
 import com.mysliukserhii.mynewcoursework.data.dao.dishes.Dishes
 import com.mysliukserhii.mynewcoursework.data.dao.dishes.DishesDao
 
-class DishesRepository() {
+class DishesRepository {
 
     private val db = AppDataBase.getInstance()
     private val constructorDao = db.ConstructorDao()
