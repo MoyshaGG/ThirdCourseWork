@@ -15,7 +15,7 @@ import com.mysliukserhii.mynewcoursework.data.dao.user.UserDao
 
 @Database(
     entities = [Diet::class, Dishes::class, Constructor::class, User::class],
-    version = 1
+    version = 3
 )
 abstract class AppDataBase : RoomDatabase() {
 

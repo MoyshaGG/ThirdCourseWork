@@ -18,8 +18,8 @@ interface DishesDao {
     @Update
     suspend fun update(dishes: Dishes)
 
-    @Query("SELECT * FROM dishes")
-    fun getAllDishesLiveData() : LiveData<List<Dishes>>
+    //@Query("SELECT * FROM dishes")
+  //  fun getAllDishesLiveData() : LiveData<List<Dishes>>
 
     @Query("SELECT * FROM dishes")
     suspend fun getAllDishes() : List<Dishes>

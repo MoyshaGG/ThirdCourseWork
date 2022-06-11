@@ -29,9 +29,8 @@ interface ConstructorDao {
 //           " constructor_food ON constructor_food.dish_id =  dishes.dish_id " +
 //           "AND diet_id = :dietKey AND day = :day and time = :time")
 
-    @Query("SELECT  dishes.dish_id, dishes.name, dishes.cal FROM constructor_food LEFT JOIN dishes ON constructor_food.dish_id =  dishes.dish_id \n" +
-            "WHERE day = :day and time = :time")
-       fun getUserWithApps( day: String, time: Int): Dishes
+    @Query("SELECT  dishes.dish_id, dishes.name, dishes.cal FROM constructor_food LEFT JOIN dishes ON constructor_food.dish_id =  dishes.dish_id WHERE day = :day and time = :time")
+       fun getUserWithApps( day: String, time: Int ): Dishes
 
 //    @Query("SELECT * " +
 //            "FROM  " + "LEFT JOIN  " + "  ON  =  AND  = :accountId")

@@ -31,19 +31,6 @@ class ConstructorData {
         Constructor(1, 8, "Неділя", 1),
         Constructor(1, 9, "Неділя", 2),
         Constructor(1, 10, "Неділя", 3),
-
-
         )
 }
 
-//        data class Constructor(
-//    @ColumnInfo(name = "diet_id")
-//    val diet_id: Int,
-//    @ColumnInfo(name = "dish_id")
-//    val dish_id: Int,
-//    @ColumnInfo
-//    val day: Int,
-//    @ColumnInfo
-//    val time: Int,
-//
-//    )

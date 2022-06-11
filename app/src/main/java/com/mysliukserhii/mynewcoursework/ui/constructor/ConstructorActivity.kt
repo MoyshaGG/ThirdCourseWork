@@ -16,7 +16,8 @@ import com.mysliukserhii.mynewcoursework.ui.dishes.DishListActivity
 class ConstructorActivity : AppCompatActivity(), View.OnClickListener {
     private val viewModel: ConstrutorViewModel by viewModels()
 
-    val days = arrayOf("Понеділок", "Вівторок", "Середа", "Четверг", "П'ятниця", "Суббота", "Неділя")
+    val days =
+        arrayOf("Понеділок", "Вівторок", "Середа", "Четверг", "П'ятниця", "Суббота", "Неділя")
 
     private lateinit var binding: ActivityConstructorBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,23 +41,21 @@ class ConstructorActivity : AppCompatActivity(), View.OnClickListener {
             Log.i("BEB", it.toString())
         }
 
-
         binding.breakfast.setOnClickListener {
-
             selectDish()
         }
+
         binding.lunch.setOnClickListener {
             selectDish()
         }
+
         binding.breakfast.setOnClickListener {
             selectDish()
         }
+
         binding.dinner.setOnClickListener {
             selectDish()
         }
-
-
-
     }
 
     private fun selectDish() {
@@ -74,12 +73,12 @@ class ConstructorActivity : AppCompatActivity(), View.OnClickListener {
         return super.onOptionsItemSelected(item)
     }
 
-
     override fun onClick(v: View?) {
         val intent = Intent(this, AddDishActivity::class.java)
         startActivity(intent)
     }
-     fun insertData(dishData: DishesData) {
+
+    fun insertData(dishData: DishesData) {
         dishData.Dishes.onEach {
             viewModel.addDishes(it)
         }

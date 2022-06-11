@@ -41,6 +41,5 @@ data class Constructor(
     val day: String,
     @ColumnInfo
     val time: Int,
-
     )
 
